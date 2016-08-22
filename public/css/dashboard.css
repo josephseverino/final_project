@@ -1,3 +1,53 @@
-body {
-    margin-top: 40px;
+* {
+    margin:0;
+}
+
+body, html {
+    height:100%;
+    /*font-family: 'Amatic SC', cursive;*/
+    font-family: 'Yanone Kaffeesatz', sans-serif;
+    /*font-family: 'BenchNine', sans-serif;
+    font-family: 'Teko', sans-serif;*/
+}
+
+
+nav {
+    position:fixed;
+    width:100%;
+    height:60px;
+    background-color:rgba(0,0,0,.8);
+    z-index:99;
+    text-align: right;
+
+
+
+}
+
+nav a {
+    text-decoration:none;
+    color: white;
+    font-weight: bold;
+    margin-right:30px;
+    position: relative;
+    top: 30px;
+    font-size: 20px;
+    font-stretch: ultra-condensed;
+}
+
+nav a:hover {
+    color:orange;
+    text-decoration:none;
+}
+nav a:active {
+    text-decoration: none;
+}
+nav a:visited {
+    text-decoration: none;
+    color:f9f9f9f;
+}
+
+.position {
+    position:relative;
+    top:40%;
+    text-align: center;
 }

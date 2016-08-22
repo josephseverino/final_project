@@ -23,10 +23,12 @@
 
                 $http.post('/login', auth.payload)
                     .then(auth.login.success, auth.login.error);
+                    console.log('it worked')
                     // brandon reminds you, that a wiffle bat will strike you if you forget your error callback!
             },
             success: function(res) { // server response callback
                 location.href = '/dashboard';
+                console.log('it worked')
             },
             error: function(err) {
                 console.error('Login.error', err);

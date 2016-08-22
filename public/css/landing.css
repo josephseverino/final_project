@@ -4,6 +4,10 @@
 
 body, html {
     height:100%;
+    /*font-family: 'Amatic SC', cursive;*/
+    /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+    font-family: 'BenchNine', sans-serif;
+    /*font-family: 'Teko', sans-serif;*/
 }
 
 
@@ -14,21 +18,26 @@ nav {
     position:fixed;
     width:100%;
     height:70px;
-    background-color:rgba(0,0,0,.8);
+    background-color:rgba(0,0,0,.5);
     z-index:99;
-    text-align:center;
+    text-align: right;
+
+
+
 
 }
 
 nav a {
     text-decoration:none;
     color: white;
-    margin-left:30px;
-    line-height:70px;
-    font-size: 20px;
-
-
+    /*font-weight: bold;*/
+    margin-right:30px;
+    position: relative;
+    top: 30px;
+    font-size: 30px;
+    font-stretch: ultra-condensed;
 }
+
 nav a:hover {
     color:orange;
     text-decoration:none;
@@ -38,7 +47,7 @@ nav a:active {
 }
 nav a:visited {
     text-decoration: none;
-    color:white;
+    color:f9f9f9f;
 }
 .logo {
     height:98%;
@@ -56,18 +65,54 @@ nav a:visited {
     top:46%;
     text-align: center;
 
+
 }
 .title p {
     font-size:50px;
     font-weight:900;
+    text-shadow: 5px 5px 10px black;
+}
+
+/*sign-in modal*/
+.sign-in-modal{
+    position:fixed;
+    top:0;
+    right:0;
+    text-align:center;
+    padding-top: 20%;
+    width: 100vw;
+    height:100vh;
+    z-index:1002;
+    background-color:rgba(0,0,0,.8);
+    font-size:20px;
+}
+.sign-in-container{
+    position:fixed;
+    top:15%;
+    right:32%;
+    height:43%;
+    width:33%;
+    z-index: 1003;
+}
+.sign-in-exit {
+    position:relative;
+    top:0;
+    right:-50%;
+    color:#DDD;
+    font-size:20px;
+    cursor: pointer;
+}
+.sign-in-exit:hover {
+    text-shadow: 5px 5px 10px white;
+
 }
 
 .footer {
     height: 50%;
     width:100%;
-    color:white;
+    color:f9f9f9f;
     /*font-size:40px;*/
-    background-color:#2D2D2D;
+    background-color:rgba(255,95,54,1);
     padding-top: 3%;
     z-index:20;
     text-align:center;
@@ -96,32 +141,59 @@ nav a:visited {
 
     z-index:1000;
     position:relative;
-    top:46%;
-    left:47%;
+    top:47%;
+    text-align: center;
 
 
 }
-
-.btn-lg{
-    background-color:orange;
+.btn-lg {
+    background-color:rgba(0,0,0,.5);
     color:white;
     font-size: 25px;
     height: 55px;
-    width:150px;
+    border: solid white 1px;
+    /*width:150px;*/
 }
 .btn-lg:hover {
-    background-color: white;
-    color:black;
+    background-color: #6E25E8;
+    color:white;
 }
 .btn-lg:active {
-    background-color:orange;
+    background-color:#6E25E8;
     color:white;
 }
 .btn-lg:visited {
-    background-color:orange;
+    background-color:#6E25E8;
+    color:white;
+}
+.btn-register{
+    background-color:rgba(255,95,54,1);
+    color:white;
+    font-size: 25px;
+    height: 55px;
+    border: solid white 1px;
+    /*width:150px;*/
+}
+.btn-register:hover {
+    background-color: rgba(255,95,54,1);
+    color:white;
+}
+.btn-register:active {
+    background-color:rgba(255,95,54,1);
+    color:white;
+}
+.btn-register:visited {
+    background-color:rgba(255,95,54,1);
     color:white;
 }
 
+.parallax {
+
+    background: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRbXFC_TplzE8G65lg4yPLxamMfiRKK4uOBuFXUH_wOBIFVvIeB') no-repeat fixed 100%;
+    height: 1000px;
+    width:100%;
+    z-index: 20;
+}
 
 .homepage-hero-module {
     border-right: none;

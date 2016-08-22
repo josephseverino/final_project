@@ -9,11 +9,15 @@
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
         <script src="/js/dashboard.js"></script>
+        <link rel="stylesheet" type="text/css" href="../css/dashboard.css">
     </head>
-    <body ng-controller="DashboardController as dashboard" class="container">
-        <div class="jumbotron">
-          <h1>Welcome to your dashboard!</h1>
-          <p>One day this page will be filled with imagination.</p>
+    <body ng-controller="DashboardController as dashboard" >
+        <nav >
+            <a  href="#/home">Locations</a>
+            <a href="#/near">Explore!</a>
+        </nav>
+        <div class="position">
+
           <a href="/logout" class="btn btn-lg btn-danger">Logout</a>
         </div>
     </body>
