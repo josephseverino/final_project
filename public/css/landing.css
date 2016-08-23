@@ -14,6 +14,8 @@ body, html {
 h1, h2, h3, h4, h5, h6, p {
     margin-bottom:20px;
 }
+
+/*this is everything for the Nav bar*/
 nav {
     position:fixed;
     width:100%;
@@ -21,19 +23,26 @@ nav {
     background-color:rgba(0,0,0,.5);
     z-index:99;
     text-align: right;
+}
+.background-color{
+    background-color: rgba(255,95,54,1);
+    padding: 13px;
+}
 
-
-
-
+.navbar {
+    margin-bottom: 0;
+    background-color:rgba(0,0,0,.5);
+    position:fixed;
 }
 
 nav a {
     text-decoration:none;
     color: white;
+
     /*font-weight: bold;*/
     margin-right:30px;
     position: relative;
-    top: 30px;
+    top: 15px;
     font-size: 30px;
     font-stretch: ultra-condensed;
 }
@@ -49,6 +58,7 @@ nav a:visited {
     text-decoration: none;
     color:f9f9f9f;
 }
+
 .logo {
     height:98%;
     width:100px;
@@ -106,37 +116,6 @@ nav a:visited {
     text-shadow: 5px 5px 10px white;
 
 }
-
-.footer {
-    height: 50%;
-    width:100%;
-    color:f9f9f9f;
-    /*font-size:40px;*/
-    background-color:rgba(255,95,54,1);
-    padding-top: 3%;
-    z-index:20;
-    text-align:center;
-}
-.steps {
-    height:50%;
-    width:100%;
-    color:black;
-    background-color:white;
-    padding-top: 3%;
-    z-index:20;
-    text-align:center;
-}
-
-#caption{
-    padding-bottom: 200px;
-}
-.section {
-    height:100%;
-    background-size:cover;
-    background-attachment: fixed;
-
-}
-
 .log-in {
 
     z-index:1000;
@@ -146,6 +125,7 @@ nav a:visited {
 
 
 }
+/*These are my login and register buttons*/
 .btn-lg {
     background-color:rgba(0,0,0,.5);
     color:white;
@@ -187,12 +167,53 @@ nav a:visited {
     color:white;
 }
 
+/*This is everthing for the footer*/
+.footer {
+    height: 50%;
+    width:100%;
+    color:#333;
+    font-size: 30px;
+    background-color: #F1F1F1;
+    padding-top: 3%;
+    z-index:20;
+    text-align:center;
+}
+
+/*This is everything for the steps sections*/
+.steps {
+    height:50%;
+    width:100%;
+    color:black;
+    background-color:white;
+    padding-top: 3%;
+    z-index:20;
+    text-align:center;
+}
+
+#caption{
+    padding-bottom: 200px;
+}
+
+
+/*parrallax section css*/
 .parallax {
 
-    background: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRbXFC_TplzE8G65lg4yPLxamMfiRKK4uOBuFXUH_wOBIFVvIeB') no-repeat fixed 100%;
-    height: 1000px;
+    /*background: url('https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRbXFC_TplzE8G65lg4yPLxamMfiRKK4uOBuFXUH_wOBIFVvIeB') no-repeat fixed 100%;*/
+    height: 100vh;
     width:100%;
     z-index: 20;
+    background: url("../img/camping.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*everything for the video*/
+.section {
+    height:100%;
+    background-size:cover;
+    background-attachment: fixed;
 }
 
 .homepage-hero-module {
@@ -239,4 +260,3 @@ nav a:visited {
 .video-container video.fillWidth {
     width: 100%;
 }
-Copy

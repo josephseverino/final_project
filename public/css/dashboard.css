@@ -1,36 +1,45 @@
-* {
+** {
     margin:0;
 }
 
 body, html {
     height:100%;
     /*font-family: 'Amatic SC', cursive;*/
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    /*font-family: 'BenchNine', sans-serif;
-    font-family: 'Teko', sans-serif;*/
+    /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
+    font-family: 'BenchNine', sans-serif;
+    /*font-family: 'Teko', sans-serif;*/
 }
+
 
 
 nav {
     position:fixed;
     width:100%;
-    height:60px;
-    background-color:rgba(0,0,0,.8);
+    height:70px;
+    background-color:rgba(0,0,0,.5);
     z-index:99;
     text-align: right;
+}
+.background-color{
+    background-color: rgba(255,95,54,1);
+    padding: 13px;
+}
 
-
-
+.navbar {
+    margin-bottom: 0;
+    background-color:rgba(0,0,0,.5);
+    position:fixed;
 }
 
 nav a {
     text-decoration:none;
     color: white;
-    font-weight: bold;
+
+    /*font-weight: bold;*/
     margin-right:30px;
     position: relative;
-    top: 30px;
-    font-size: 20px;
+    top: 15px;
+    font-size: 30px;
     font-stretch: ultra-condensed;
 }
 
@@ -46,8 +55,22 @@ nav a:visited {
     color:f9f9f9f;
 }
 
+/*logout button*/
 .position {
     position:relative;
     top:40%;
     text-align: center;
+    height:100vh;
+    width:100vw;
+}
+
+.footer {
+    height: 50%;
+    width:100%;
+    color:#333;
+    font-size: 25px;
+    background-color:#FFF;
+    padding-top: 3%;
+    z-index:20;
+    text-align:center;
 }
