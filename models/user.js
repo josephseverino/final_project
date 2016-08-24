@@ -10,13 +10,17 @@ var mongoose = require('mongoose'),
         created: {
             type: Number,
             default: () => Date.now()
-        }
-        // created: {
-        //     type:number,
-        //     default: function() {
-        //         Date.now()
-        //     }
-        // }
+        },
+        rate: Number,
+        phone: String,
+        description: String,
+        typeEquipment: String,
+        profilePic: String,
+        zipCode: String,
+        city: String,
+        state: String,
+        photo: String,
+
     });
 
 // hash passwords before saving a new user

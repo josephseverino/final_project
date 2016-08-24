@@ -177,6 +177,8 @@ nav a:visited {
     padding-top: 3%;
     z-index:20;
     text-align:center;
+    position: relative;
+    top: 40px;
 }
 
 /*This is everything for the steps sections*/

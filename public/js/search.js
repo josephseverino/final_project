@@ -7,7 +7,7 @@ function initialize() {
             {
               featureType: 'all',
               stylers: [
-                { saturation: -80 }
+                { saturation: 20 }
               ]
             },{
               featureType: 'road.arterial',
@@ -29,77 +29,45 @@ function initialize() {
   });
 
 }
+// var lat = '';
+// var lng = '';
+// var address = 80504 ;
+// geocoder.geocode( { 'address': address}, function(results, status) {
+//   if (status == google.maps.GeocoderStatus.OK) {
+//      lat = results[0].geometry.location.lat();
+//      lng = results[0].geometry.location.lng();
+//     });
+//   } else {
+//     alert("Geocode was not successful for the following reason: " + status);
+//   }
+// });
+// alert('Latitude: ' + lat + ' Logitude: ' + lng);
+// for (var i = 0; i < profiles.users.length; i++) {
+//         var zip = profiles.users[i].zipCode;
+//         var marker = new google.maps.Marker({
+//           position: {
+//               lat:lat,
+//               lng:lng,
+//           }
+//           map: map,
+//         });
 
-    var output = $.ajax({
-    url: 'https://trailapi-trailapi.p.mashape.com/?lat=39.4817&lon=-106.0384&q[activities_activity_type_name_eq]=hiking&radius=100', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
-    type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
-    data: {}, // Additional parameters here
-    dataType: 'json',
-    success: function(data) {
-      //
-        //Change data.source to data.something , where something is whichever part of the object you want returned.
-        //To see the whole object you can output it to your browser console using:
-        console.log(data.places);
-        for (var i = 0; i < data.places.length; i++) {
-                var lat = data.places[i].lat;
-                var lon = data.places[i].lon;
-                var title = data.places[i].name;
-                var description = data.places[i].activities[0].description;
-                var pic = data.places[i].activities[0].thumbnail;
-                var height;
-                if(!pic){
-                    height="1px";
-                }else{
-                    height="200px";
-                }
 
-                var marker = new google.maps.Marker({
-                  position: {
-                    lat: lat,
-                    lng: lon,
-                  },
-                  map: map,
-                  title:title,
-                  description: description,
-                  height:height,
+angular.module('gear',[])
 
-                  pic: pic,
-                  animation:google.maps.Animation.Drop,
-                  id: i,
-                  icon: "../img/hiking.png"
-                });
-                var infoWindow = new google.maps.InfoWindow({
-                });
-                marker.addListener('click',function(){
+angular.module('gear')
+    .controller('gearController', ['$scope','$http', function($scope, $http){
+        var profiles = this;
 
-                    populateInfoWindow(this, infoWindow);
-                });
-            };
-            function populateInfoWindow(marker,infowindow){
 
-                if(infowindow.marker != marker){
-                    infowindow.marker = marker;
-                    var markerHtml;
-                    if(marker.pic){
-                        markerHtml = '<h2>' + marker.title + '</h2>'  +
-                                     '<div>' + marker.description + '</div>'  +
-                                     '<div>' + '<img style="height: ' + marker.height + '" src="' + marker.pic + '"/></div>';
-                    }else{
-                        markerHtml = '<h2>' + marker.title + '</h2>'  +
-                                     '<div>' + marker.description + '</div>'
-                    }
-                    infowindow.setContent( markerHtml );
-                    infowindow.open(map,marker);
-                    infowindow.addListener('closeclick', function(){
-                        console.log('hello')
-                        infowindow.setMarker(null);
-                    })
-                }
+        $http({
+            method : 'GET',
+            url    : '/users',
+        }).then(function(returnData){
+            console.log(returnData.data)
+            if (returnData.data ){
+                profiles.users = returnData.data;
+
             }
-        },
-    error: function(err) { alert(err); },
-    beforeSend: function(xhr) {
-    xhr.setRequestHeader("X-Mashape-Authorization", "hyv4z0FsLumshX2kfe9SZLo8HRQYp1HEP5EjsnxXNzRcXJEJoK"); // Enter here your Mashape key
-    }
-
-});
+        })
+    }])

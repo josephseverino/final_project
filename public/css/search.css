@@ -1,12 +1,86 @@
 #map {
-       top: 70px;
-       left:20px;
-       height: 100%;
-       width: 40vw;
-       position:fixed;
+       top: 80px;
+       height: 1000px;
+       width: 33vw;
+       position:relative;
    }
-img {
-       border: 0;
-       height: 150px;
-       width: 209px;
+
+ .searchForm {
+     float:right;
+     top: 80px;
+     position:relative;
+     width:99%;
+     height: 80px;
+     background-color: rgba(0,0,0,.5);
+     margin-bottom: 5px;
+     font-size:25px;
+     padding-top:15px;
  }
+
+ .checkbox {
+     display:inline-block;
+     padding:5px 10px;
+     color:white;
+ }
+
+ .label {
+     font-size: 45px;
+     color: white;
+     padding:10px 50px 0px 20px;
+     margin-top: 20px;
+ }
+
+ .gearProfile {
+     float:right;
+     top: 80px;
+     position:relative;
+     width:99%;
+     height: 400px;
+     border-top: 8px solid #777;
+     padding-bottom: 15px;
+ }
+
+ .gearImg {
+     height:100%;
+     width:22vw;
+     float:left;
+     padding-right:25px;
+ }
+
+ .button {
+     height: 80px;
+     width: 150px;
+     position:absolute;
+     bottom:43%;
+     right: 5px;
+     background-color: rgba(255,95,54,1);
+     font-size: 35px;
+     color:white;
+ }
+
+.title {
+    font-size: 55px;
+}
+
+.location {
+    color: #999
+}
+
+.rate {
+    color:#999;
+    font-size: 35px;
+    position:absolute;
+    bottom:0px;
+    right: 5px;
+}
+
+.rateNumber {
+    color:#999;
+    font-size: 55px;
+}
+
+.pagination {
+    padding:20px;
+    position: relative;
+    top: 64px;
+}

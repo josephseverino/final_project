@@ -29,28 +29,28 @@
                 </div>
             </fieldset>
            <div class="form-group">
-             <label >Email address</label>
-             <input type="email" class="form-control" placeholder="Email"  ng-model="profiles.email">
+             <label >Zip Code</label>
+             <input type="text" class="form-control"  placeholder="Zip Code" ng-model="auth.payload.zipCode">
            </div>
            <div class="form-group">
              <label >City</label>
-             <input type="text" class="form-control"  placeholder="City" ng-model="profiles.city">
+             <input type="text" class="form-control"  placeholder="Zip Code" ng-model="auth.payload.city">
            </div>
            <div class="form-group">
              <label >State</label>
-             <input type="text" class="form-control"  placeholder="State" ng-model="profiles.state">
+             <input type="text" class="form-control"  placeholder="Zip Code" ng-model="auth.payload.state">
            </div>
            <div class="form-group">
              <label >Phone Number</label>
-             <input type="text" class="form-control"  placeholder="Phone Number" ng-model="profiles.phone">
+             <input type="text" class="form-control"  placeholder="Phone Number" ng-model="auth.payload.phone">
            </div>
            <div class="form-group">
-             <label >How much do you want charge</label>
-             <input type="text" class="form-control"  placeholder="e.g. $50/day"  ng-model="profiles.rate">
+             <label >How much do you want charge per day</label>
+             <input type="text" class="form-control"  placeholder="e.g. 5"  ng-model="auth.payload.rate">
            </div>
            <div class="form-group">
              <label >Select the type equipment</label>
-              <select class="form-control"  ng-model="profiles.typeEquipment">
+              <select type="text" class="form-control"  ng-model="auth.payload.typeEquipment">
                <option>Water Sports</option>
                <option>Camping related</option>
                <option>Winter Sports</option>
@@ -58,26 +58,18 @@
                <option>Misc</option>
            </select>
            </div>
-           <textarea class="form-control" rows="3" placeholder="Description of your gear"  ng-model="profiles.descript"></textarea>
+           <textarea type="text" class="form-control" rows="3" placeholder="Description of your gear"  ng-model="auth.payload.description"></textarea>
            <div class="form-group">
              <label >Profile Picture</label>
-             <input  ng-model="profiles.profilePic" type="text" class="form-control" placeholder="URL here">
+             <input  ng-model="auth.payload.profilePic" type="text" class="form-control" placeholder="URL here">
              <p class="help-block">Upload the photo that you want to use on your profile</p>
            </div>
            <div class="form-group">
              <label >Pictures of your gear</label>
-             <input  ng-model="profiles.photo1"type="text" class="form-control" placeholder="URL here" >
-             <input ng-model="profiles.photo2"type="text" class="form-control" placeholder="URL here" >
-             <input  ng-model="profiles.photo3"type="text" class="form-control" placeholder="URL here" >
-             <input  ng-model="profiles.photo4"type="text" class="form-control" placeholder="URL here" >
+             <input  type="text" ng-model="auth.payload.photo"type="text" class="form-control" placeholder="URL here" >
              <p class="help-block">Upload photos that will be used to display the gear you want to loan out</p>
            </div>
-           <div class="checkbox">
-             <label>
-               <input type="checkbox"> Post my AD
-             </label>
-           </div>
-           <div>
+           <!-- <div>
                 <input type="submit" value="Submit" class="btn btn-default">
                 <a ng-click="profiles.adPreview = !profiles.adPreview" class="btn btn-default blueBtn">Preview</a>
                 <div ng-show="profiles.adPreview" id="modal2">
@@ -94,7 +86,7 @@
                              <img class="demoProfilePic" ng-src="{{ profiles.profilePic  }}">
                      </div>
                 </div>
-           </div>
+           </div> -->
            </div>
             <button class="btn btn-primary" type="submit">Register</button>
             <p ng-class="auth.register.alert">{{ auth.register.message }}</p>

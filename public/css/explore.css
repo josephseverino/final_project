@@ -1,0 +1,12 @@
+#map {
+       top: 80px;
+       left:50px;
+       height: 80vh;
+       width: 90vw;
+       position:relative;
+   }
+img {
+       border: 0;
+       height: 150px;
+       width: 209px;
+ }
