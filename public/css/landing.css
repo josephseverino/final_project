@@ -99,7 +99,7 @@ nav a:visited {
 .sign-in-container{
     position:fixed;
     top:15%;
-    right:32%;
+    right:33%;
     height:43%;
     width:33%;
     z-index: 1003;
@@ -111,10 +111,20 @@ nav a:visited {
     color:#DDD;
     font-size:20px;
     cursor: pointer;
+    padding-bottom: 40px;
+    font-family: sans-serif;;
 }
 .sign-in-exit:hover {
     text-shadow: 5px 5px 10px white;
 
+}
+
+.input-group-addon {
+    color: white;
+    background-color: #eee;
+    border: 0px;
+    border-radius: 4px;
+    background-color: rgba(255,95,54,1);
 }
 .log-in {
 
@@ -125,38 +135,44 @@ nav a:visited {
 
 
 }
+.btn-login {
+    width:100%;
+    color:white;
+    font-size: 20px;
+    background-color: rgba(255,95,54,1);
+}
 /*These are my login and register buttons*/
 .btn-lg {
     background-color:rgba(0,0,0,.5);
     color:white;
     font-size: 25px;
     height: 55px;
-    border: solid white 1px;
+    border: solid white 0px;
     /*width:150px;*/
 }
 .btn-lg:hover {
-    background-color: #6E25E8;
-    color:white;
+    background-color:white;
+    color:black;
 }
 .btn-lg:active {
-    background-color:#6E25E8;
-    color:white;
+    background-color:white;
+    color:black;
 }
 .btn-lg:visited {
-    background-color:#6E25E8;
-    color:white;
+    background-color:white;
+    color:black;
 }
 .btn-register{
     background-color:rgba(255,95,54,1);
     color:white;
     font-size: 25px;
     height: 55px;
-    border: solid white 1px;
+    border: solid white 0px;
     /*width:150px;*/
 }
 .btn-register:hover {
-    background-color: rgba(255,95,54,1);
-    color:white;
+    background-color: white;
+    color:rgba(255,95,54,1);
 }
 .btn-register:active {
     background-color:rgba(255,95,54,1);

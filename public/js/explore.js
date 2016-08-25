@@ -52,7 +52,6 @@ function initialize() {
                 }else{
                     height="200px";
                 }
-
                 var marker = new google.maps.Marker({
                   position: {
                     lat: lat,
@@ -62,7 +61,6 @@ function initialize() {
                   title:title,
                   description: description,
                   height:height,
-
                   pic: pic,
                   animation:google.maps.Animation.Drop,
                   id: i,
@@ -71,12 +69,10 @@ function initialize() {
                 var infoWindow = new google.maps.InfoWindow({
                 });
                 marker.addListener('click',function(){
-
                     populateInfoWindow(this, infoWindow);
                 });
             };
             function populateInfoWindow(marker,infowindow){
-
                 if(infowindow.marker != marker){
                     infowindow.marker = marker;
                     var markerHtml;

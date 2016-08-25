@@ -4,6 +4,7 @@
 
 body, html {
     height:100%;
+    background-color: #EEE;
     /*font-family: 'Amatic SC', cursive;*/
     /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
     font-family: 'BenchNine', sans-serif;
@@ -21,8 +22,8 @@ nav {
     text-align: right;
 }
 .background-color{
-    background-color: rgba(255,95,54,1);
-    padding: 13px;
+    background-color: #1abc9c;
+    padding: 15px;
 }
 
 .navbar {
@@ -55,13 +56,215 @@ nav a:visited {
     color:f9f9f9f;
 }
 
+.title {
+    position: relative;
+    top: 90px;
+    left: 13%;
+    font-size: 73px;
+    color: rgba(0,0,0,.5);
+}
+.title2 {
+    padding: 20px 20px;
+    color:#CCC;
+    font-size: 53px;
+    border-bottom: solid white 1px;
+}
+
+.img-container {
+    position:relative;
+    top:100px;
+    left:70px;
+    background-color: rgba(0,0,0,.9);
+    height:50vh;
+    border-radius: 8px;
+}
+.gear-img {
+    width:100%;
+    height:100%;
+}
+
+.calender {
+    position:relative;
+    top:90px;
+    left:100px;
+    background-color: #222;
+    height:95vh;
+    width:100%;
+    border-radius: 8px;
+}
+.rate1 {
+    color: #999;
+    font-size: 35px;
+    position: relative;
+    top: 15px;
+    left: 15px;
+    border-bottom: white 1px solid;
+}
+.btnContainer {
+    position:relative;
+    bottom: -105px;
+}
+.book {
+    width: 80%;
+    color:white;
+    font-size:20px;
+    background-color: #1abc9c;
+    position:relative;
+    bottom: 15px;
+    left:10%;
+}
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+/* Month header */
+.month {
+    padding: 70px 25px;
+    width: 100%;
+    background: #1abc9c;
+}
+
+/* Month list */
+.month ul {
+    margin: 0;
+    padding: 0;
+}
+
+.month ul li {
+    color: white;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+/* Previous button inside month header */
+.month .prev {
+    float: left;
+    padding-top: 10px;
+}
+
+/* Next button */
+.month .next {
+    float: right;
+    padding-top: 10px;
+}
+
+/* Weekdays (Mon-Sun) */
+.weekdays {
+    margin: 0;
+    padding: 10px 0;
+    background-color:#ddd;
+}
+
+.weekdays li {
+    display: inline-block;
+    width: 13.6%;
+    color: #666;
+    text-align: center;
+}
+
+/* Days (1-31) */
+.days {
+    padding: 10px 0;
+    background: #eee;
+    margin: 0;
+}
+
+.days li {
+    list-style-type: none;
+    display: inline-block;
+    width: 13.6%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-size:12px;
+    color:#777;
+}
+
+/* Highlight the "current" day */
+.days li .active {
+    padding: 5px;
+    background: #1abc9c;
+    color: white !important
+}
+.info-box {
+    position: relative;
+    top: -285px;
+    left: 50px;
+    width: 100%;
+    height: 65vh;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.profile-container {
+    background-color: rgba(0,0,0,.9);
+    width:490px;
+    position:relative;
+    top: 115px;
+    left: 115px;
+    border-radius: 7px;
+}
+.profile-pic {
+    height: 200px;
+    width: 50%;
+    float:left;
+}
+
+.profile-name {
+    padding-top: 1px;
+    position: relative;
+    left: 15px;
+    color:#CCC;
+}
+.hidden-contact {
+    position: relative;
+    left: 15px;
+    color:#CCC;
+    padding-bottom:35px;
+}
+
+.contact {
+    background-color: #1abc9c;
+    color: #CCC;
+    margin-left: 10px;
+    width: 220px;
+    margin-top: 10px;
+
+}
 /*logout button*/
 .position {
     position:relative;
-    top:40%;
+    top:25px;
     text-align: center;
-    height:100vh;
-    width:100vw;
+}
+
+.edit {
+    background-color: #1abc9c;
+    color:white;
+    width: 120px;
+}
+
+.modal-edit {
+    z-index: 10001;
+    height:200%;
+    position:relative;
+    top:-600px;
+    left:0px;
+    background-color: rgba(0,0,0,.9);
+}
+
+.text-center {
+    color:white;
+}
+.sign-in-exit {
+    position:relative;
+    top:0;
+    right:-100%;
+    color:#DDD;
+    font-size:20px;
+    cursor: pointer;
+    padding-bottom: 40px;
+    font-family: sans-serif;;
 }
 
 .footer {

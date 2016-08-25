@@ -33,7 +33,7 @@ module.exports = (app) => {
                 res.json(users);
             }
         });
-    })
+    });
 
     //
     // app.get('/explore', (req,res)=>{

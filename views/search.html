@@ -20,7 +20,7 @@
           <a class="explore-link"href="./explore">Explore!</a>
       </nav>
       <div class="row">
-          <div  class="col-xs-4" id="map"></div>
+          <div  class="col-xs-4"  id="map"></div>//ng-init="profiles.initialize();profiles.makeAddress()"
           <div class="col-xs-8">
               <div>
                   <form class="searchForm">
@@ -53,7 +53,7 @@
               <div ng-repeat="profile in profiles.users " class="gearProfile">
                   <img  class="gearImg" ng-src="{{ profile.photo }}"/>
                   <button class="button btn">Reserve Me</button>
-                  <h1 class="title">{{ profile.typeEquipment }}</h1>
+                  <h1 class="title-search">{{ profile.typeEquipment }}</h1>
                   <h3 class="location">@{{ profile.city }},{{ profile.state }}</h3>
                   <h3 class="rate">Starting From<span class="rateNumber">${{ profile.rate }}/</span>Day</h3>
               </div>
@@ -89,7 +89,7 @@
        </div>
    </div>
     <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4papMszGMD2QxBHl0lhCn-YYIqy4ib6c&callback=initialize">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4papMszGMD2QxBHl0lhCn-YYIqy4ib6c">&callback=initialize
     </script>
   </body>
 </html>
