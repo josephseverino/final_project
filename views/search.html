@@ -4,7 +4,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|BenchNine|Teko|Yanone+Kaffeesatz:700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Economica|Open+Sans+Condensed:300" rel="stylesheet">
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="../css/dashboard.css">
     <link rel="stylesheet" type="text/css" href="../css/search.css">
@@ -20,7 +20,7 @@
           <a class="explore-link"href="./explore">Explore!</a>
       </nav>
       <div class="row">
-          <div  class="col-xs-4"  id="map"></div>//ng-init="profiles.initialize();profiles.makeAddress()"
+          <div  class="col-xs-4"  id="map"></div>
           <div class="col-xs-8">
               <div>
                   <form class="searchForm">
@@ -52,7 +52,8 @@
               </div>
               <div ng-repeat="profile in profiles.users " class="gearProfile">
                   <img  class="gearImg" ng-src="{{ profile.photo }}"/>
-                  <button class="button btn">Reserve Me</button>
+                  <a href="/reserve/{{profile._id}}" class="button btn">Reserve Me</a>
+                  <p>{{profile._id}}</p>
                   <h1 class="title-search">{{ profile.typeEquipment }}</h1>
                   <h3 class="location">@{{ profile.city }},{{ profile.state }}</h3>
                   <h3 class="rate">Starting From<span class="rateNumber">${{ profile.rate }}/</span>Day</h3>

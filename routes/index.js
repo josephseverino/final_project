@@ -13,6 +13,10 @@ module.exports = (app) => {
         res.render('explore.html')
     });
 
+    app.get('/reserve/:id', (req,res) => {
+         res.render('reserve.html')
+    });
+
     app.get('/user',  (req, res) => {
         // Send down the logged in user
         res.send({user:req.session.user})
@@ -35,10 +39,35 @@ module.exports = (app) => {
         });
     });
 
-    //
-    // app.get('/explore', (req,res)=>{
-    //     res.sendFile()
-    // })
+    app.post('/user', (req, res) => {
+        User.findOne({
+            email: req.body.email
+        },
+        (err, user) => {
+            if( err ) {
+                console.error('MongoDB error:'.red, err);
+                res.status(500).json(errors.general);
+            }
+            if( !user ) {
+                // forbidden
+                console.warn('No user found!'.yellow);
+                res.status(403).json(errors.login);
+            } else {
+                user.email = req.body.email;
+                user.zipCode = req.body.zipCode;
+                user.city = req.body.city;
+                user.state = req.body.state;
+                user.phone = req.body.phone;
+                user.rate = req.body.rate;
+                user.typeEquipment = req.body.typeEquipment;
+                user.description = req.body.description;
+                user.profilePic = req.body.profilePic;
+                user.photo = req.body.photo;
+                user.save();
+                res.send(user)
+            }
+        });
+    });
 
     app.get('/login', Auth.render)  // login page
     app.get('/logout', Auth.logout) // logout route + redirect

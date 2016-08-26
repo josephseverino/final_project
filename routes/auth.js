@@ -13,6 +13,7 @@ var User = require('../models/user'),
 
 module.exports = {
     render: (req, res) => { // render the login page
+        req.session.user = null;
         res.render('auth.html');
     },
     logout: (req, res) => {
@@ -20,6 +21,7 @@ module.exports = {
         res.redirect('/login');
     },
     login: (req, res) => { // form post submission
+
         User.findOne({
             email: req.body.email
         }, (err, user) => {

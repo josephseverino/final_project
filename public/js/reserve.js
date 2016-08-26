@@ -1,23 +1,11 @@
-angular.module('app.dashboard', [])
-    .controller('DashboardController',  ['$scope','$http', function($scope, $http){
+angular.module('app.reserve', [])
+    .controller('ReserveController',  ['$scope','$http', function($scope, $http){
         var profiles = this;
             profiles.payload={};
 
-        profiles.update = function(){
-            $http({
-                method : 'POST',
-                url    : '/user',
-                data   : profiles.payload,
-            }).then(function(responseData){
-                console.log(responseData)
-                profiles.user = responseData.data;
-
-            });
-        }
-
         $http({
             method : 'GET',
-            url    : '/user',
+            url    : '/reserve',
         }).then(function(returnData){
             console.log(returnData.data)
             if (returnData.data ){

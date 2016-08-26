@@ -4,10 +4,7 @@
 
 body, html {
     height:100%;
-    /*font-family: 'Amatic SC', cursive;*/
-    /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
-    font-family: 'BenchNine', sans-serif;
-    /*font-family: 'Teko', sans-serif;*/
+    font-family: 'Economica', sans-serif;
 }
 
 
@@ -25,8 +22,8 @@ nav {
     text-align: right;
 }
 .background-color{
-    background-color: rgba(255,95,54,1);
-    padding: 13px;
+    background-color: #1abc9c;
+    padding: 20px 20px 29px 20px;
 }
 
 .navbar {
@@ -43,7 +40,7 @@ nav a {
     margin-right:30px;
     position: relative;
     top: 15px;
-    font-size: 30px;
+    font-size: 20px;
     font-stretch: ultra-condensed;
 }
 
@@ -163,7 +160,7 @@ nav a:visited {
     color:black;
 }
 .btn-register{
-    background-color:rgba(255,95,54,1);
+    background-color:#1abc9c;
     color:white;
     font-size: 25px;
     height: 55px;
@@ -175,24 +172,24 @@ nav a:visited {
     color:rgba(255,95,54,1);
 }
 .btn-register:active {
-    background-color:rgba(255,95,54,1);
+    background-color:#1abc9c;
     color:white;
 }
 .btn-register:visited {
-    background-color:rgba(255,95,54,1);
+    background-color:#1abc9c;
     color:white;
 }
 
 /*This is everthing for the footer*/
 .footer {
     height: 50%;
-    width:100%;
-    color:#333;
-    font-size: 30px;
-    background-color: #F1F1F1;
-    padding-top: 3%;
-    z-index:20;
-    text-align:center;
+    width: 100%;
+    color: black;
+    font-size: 18px;
+    background-color: rgba(0,0,0,.7);
+    padding-top: 5%;
+    z-index: 20;
+    text-align: center;
     position: relative;
     top: 40px;
 }

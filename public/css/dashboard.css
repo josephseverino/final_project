@@ -5,10 +5,7 @@
 body, html {
     height:100%;
     background-color: #EEE;
-    /*font-family: 'Amatic SC', cursive;*/
-    /*font-family: 'Yanone Kaffeesatz', sans-serif;*/
-    font-family: 'BenchNine', sans-serif;
-    /*font-family: 'Teko', sans-serif;*/
+    font-family: 'Economica', sans-serif;
 }
 
 
@@ -23,7 +20,7 @@ nav {
 }
 .background-color{
     background-color: #1abc9c;
-    padding: 15px;
+    padding: 20px 20px 29px 20px;
 }
 
 .navbar {
@@ -35,12 +32,10 @@ nav {
 nav a {
     text-decoration:none;
     color: white;
-
-    /*font-weight: bold;*/
     margin-right:30px;
     position: relative;
     top: 15px;
-    font-size: 30px;
+    font-size: 20px;
     font-stretch: ultra-condensed;
 }
 
@@ -269,13 +264,13 @@ body {font-family: Verdana, sans-serif;}
 
 .footer {
     height: 50%;
-    width:100%;
-    color:#333;
-    font-size: 25px;
-    background-color:#FFF;
-    padding-top: 3%;
-    z-index:20;
-    text-align:center;
+    width: 100%;
+    color: black;
+    font-size: 18px;
+    background-color: rgba(0,0,0,.7);
+    padding-top: 5%;
+    z-index: 20;
+    text-align: center;
     position: relative;
     top: 40px;
 }
