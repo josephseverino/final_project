@@ -3,7 +3,6 @@ var Auth = require('./auth'),
 
 module.exports = (app) => {
     app.get('/', (req,res) => {
-        // res.redirect('/login'); // I don't have a landing page, so just redirect to the login page!
         res.render('landingPage.html')
     });
     app.get('/search', (req,res) => {
@@ -14,7 +13,36 @@ module.exports = (app) => {
     });
 
     app.get('/reserve/:id', (req,res) => {
-         res.render('reserve.html')
+        User.find({'_id' : req.params.id}, (err, user) => {
+            if( err ) {
+                console.error('MongoDB error:'.red, err);
+                res.status(500).json(errors.general);
+            }
+            if( !user ) {
+                // forbidden
+                console.warn('No user found!'.yellow);
+                res.status(404).json(errors.login);
+            } else {
+                console.info('auth.login.user', user);
+                res.render('reserve.html')
+            }
+        });
+    });
+    app.get('/user/:id', (req,res) => {
+        User.findOne({'_id' : req.params.id}, (err, user) => {
+            if( err ) {
+                console.error('MongoDB error:'.red, err);
+                res.status(500).json(errors.general);
+            }
+            if( !user ) {
+                // forbidden
+                console.warn('No user found!'.yellow);
+                res.status(404).json(errors.login);
+            } else {
+                console.info('auth.login.user', user);
+                res.send(user)
+            }
+        });
     });
 
     app.get('/user',  (req, res) => {

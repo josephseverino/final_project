@@ -18,6 +18,30 @@
             <a class="explore-link"href="./explore">Explore!</a>
         </nav>
         <div class="col-xs-3"></div>
+        <a ng-click="auth.popup = !auth.popup"  type="button" class="btn btn-primary btn-lg">Already a member</a>
+        <div class="sign-in-modal" ng-show="auth.popup">
+            <div class="sign-in-container">
+                <form ng-submit="auth.login.submit($event)">
+                    <div class="sign-in-exit" ng-click="auth.popup = !auth.popup">X</div>
+                    <fieldset class="form-group">
+                        <label class="sr-only" for="email">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">@</div>
+                            <input required placeholder="Email" class="form-control" type="email" ng-model="auth.payload.email"/>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <label class="sr-only" for="password">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></div>
+                            <input required placeholder="Password" class="form-control" type="password" ng-model="auth.payload.password"/>
+                        </div>
+                    </fieldset>
+                    <input class="btn btn-login" type="submit" value="Login">
+                    <p ng-class="auth.login.alert">{{ auth.login.message }}</p>
+                </form>
+            </div>
+        </div>
         <form class="col-xs-6"ng-submit="auth.register.submit($event)">
             <h1 class="text-center">Register!</h1>
             <fieldset class="form-group">
