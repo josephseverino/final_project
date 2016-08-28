@@ -1,8 +1,8 @@
 #map {
+       position:fixed !important;
        top: 80px;
        height: 1000px;
        width: 33vw;
-       position:relative;
  }
 body {
     font-family: 'Economica', sans-serif;
@@ -10,17 +10,36 @@ body {
  .searchForm {
      float:right;
      top: 80px;
-     position:relative;
+     position:fixed;
      width:99%;
      height: 80px;
-     background-color: rgba(0,0,0,.5);
+     z-index: 10002;
+     background-color: #444;
+     margin-bottom: 5px;
+     font-size:25px;
+     padding-top:15px;
+ }
+ .searchForm2 {
+     float:right;
+     top: 165px;
+     position:fixed;
+     width:99%;
+     height: 80px;
+     z-index: 10002;
+     background-color: #444;
      margin-bottom: 5px;
      font-size:25px;
      padding-top:15px;
  }
 
+.rightSide {
+    position :absolute;
+    top: 0px;
+    right: 10px;
+    width:64vw
+}
  .checkbox {
-     display:inline-block;
+     display:inline;
      padding:5px 10px;
      color:white;
  }
@@ -34,10 +53,11 @@ body {
 
  .gearProfile {
      float:right;
-     top: 80px;
+     top: 220px;
+     z-index: 0;
      position:relative;
      width:99%;
-     height: 400px;
+     height: 300px;
      border-top: 8px solid #777;
      padding-bottom: 15px;
  }

@@ -1,39 +1,9 @@
-// var map;
-// var markers =[];
-// function initialize() {
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     zoom: 9,
-//     styles: [
-//             {
-//               featureType: 'all',
-//               stylers: [
-//                 { saturation: 20 }
-//               ]
-//             },{
-//               featureType: 'road.arterial',
-//               elementType: 'geometry',
-//               stylers: [
-//                 { hue: '#00ffee' },
-//                 { saturation: 50 }
-//               ]
-//             },{
-//               featureType: 'poi.business',
-//               elementType: 'labels',
-//               stylers: [
-//                 { visibility: 'off' }
-//               ]
-//             }
-//         ],
-//     center: new google.maps.LatLng(39.7392,-104.9903),
-//     mapTypeId: 'terrain'
-//   });
-// }
-
 angular.module('gear',[])
 
 angular.module('gear')
     .controller('gearController', ['$scope','$http', function($scope, $http){
         var profiles = this;
+        profiles.sortPrice = "";
         $http({
             method : 'GET',
             url    : '/users',

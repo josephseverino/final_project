@@ -1,12 +1,13 @@
 #map {
        top: 80px;
-       left:50px;
+       left:5%;
        height: 80vh;
        width: 90vw;
        position:relative;
    }
 body {
     font-family: 'Economica', sans-serif;
+    background-color: grey;
 }
 img {
        border: 0;
