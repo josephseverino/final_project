@@ -26,41 +26,34 @@
                   <form class="searchForm">
                     <labal class="label">Equipment Type</labal>
                     <div class="checkbox">
-                      <label><input type="checkbox">Camping Gear</label>
+                      <label><input ng-model="profiles.filter['Camping related']" type="checkbox">Camping Gear</label>
                     <div class="checkbox">
-                      <label><input type="checkbox">Water Sports</label>
+                      <label><input ng-model="profiles.filter['Water Sports']" type="checkbox">Water Sports</label>
+                    </div>
+                    <div class="checkbox">
+                      <label><input ng-model="profiles.filter['Winter Sports']" type="checkbox">Winter Sports</label>
                     </div>
                     <div class="checkbox ">
-                      <label><input type="checkbox">Biking</label>
+                      <label><input ng-model="profiles.filter['Biking']" type="checkbox">Biking</label>
                     </div>
                     <div class="checkbox ">
-                      <label><input type="checkbox">Misc</label>
+                      <label><input ng-model="profiles.filter['Misc']" type="checkbox">Misc</label>
                     </div>
                   </form>
               </div>
               <div>
                   <form ng-model="sortPrice" class="searchForm2">
                     <labal class="label">Sort By</labal>
-                    <label class="radio-inline checkbox"><input type="radio" name="optradio" value="-rate">Cheapest</label>
-                    <label class="radio-inline checkbox"><input type="radio" name="optradio" value="rate">Most Expensive</label>
+                    <label class="radio-inline checkbox"><input type="radio" ng-model="sortPrice" name="optradio" value="rate">Cheapest</label>
+                    <label class="radio-inline checkbox"><input type="radio" ng-model="sortPrice" name="optradio" value="-rate">Most Expensive</label>
                   </form>
               </div>
-              <div ng-repeat="profile in profiles.users | orderBy: sortPrice" class="gearProfile">
+              <div ng-repeat="profile in profiles.users | filter:profiles.filterByCategory | orderBy: sortPrice" class="gearProfile">
                   <img  class="gearImg" ng-src="{{ profile.photo }}"/>
                   <a href="/reserve/{{profile._id}}" class="button btn">Reserve Me</a>
-                  <p>{{profile._id}}</p>
                   <h1 class="title-search">{{ profile.typeEquipment }}</h1>
                   <h3 class="location">@{{ profile.city }},{{ profile.state }}</h3>
                   <h3 class="rate">Starting From<span class="rateNumber">${{ profile.rate }}/</span>Day</h3>
-              </div>
-              <div>
-                  <ul class="pagination pagination-lg">
-                     <li><a href="#">1</a></li>
-                     <li><a href="#">2</a></li>
-                     <li><a href="#">3</a></li>
-                     <li><a href="#">4</a></li>
-                     <li><a href="#">5</a></li>
-                  </ul>
               </div>
           </div>
       </div>

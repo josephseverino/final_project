@@ -1,9 +1,13 @@
 
 body {
-    background-color: #EEE;
+    background: url('https://hd.unsplash.com/photo-1465508372103-60fc5e6df917') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(0,0,0,.8);
     font-size: 20px;
     position:relative;
-    top:90px;
     padding-bottom: 50px;
     font-family: 'Economica', sans-serif;
 
@@ -26,7 +30,29 @@ form {
     border: 1px solid #ddd;
     border-top: none;
 }
+.home-exit {
+    position: relative;
+    right: -425px;
+    top: -66px;
+    color: black;
+}
 
+.btn-login{
+    background-color: #1abc9c;
+    width:100%;
+    height:40px;
+    color:white;
+    font-size: 22px;
+}
+
+.no-member {
+    margin-top: 10px;
+    background-color: blue;
+    width:100%;
+    height:40px;
+    color:white;
+    font-size: 22px;
+}
 .alert {
     margin: 20px 0;
 }
@@ -35,15 +61,19 @@ form {
     padding: 30px 0;
     box-sizing: border-box;
 }
-.footer {
-    height: 50%;
-    width: 100%;
-    color: black;
-    font-size: 18px;
-    background-color: rgba(0,0,0,.7);
-    padding-top: 5%;
-    z-index: 20;
-    text-align: center;
-    position: relative;
-    top: 40px;
+.sign-in-container {
+    margin-top: 20%;
+    padding-bottom: 100px;
+    padding-top:20px;
+    background-color: rgba(255,255,255,.7)
+
+}
+.modal_register {
+    position: absolute;
+    top:0px;
+    left:0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin:5% 10% 0 10%;
+    z-index:10004;
+    color: #1abc9c;
 }

@@ -89,8 +89,12 @@
         </div>
         <div ng-repeat="profile in profiles.user" class="row">
             <div class="col-xs-1"></div>
-            <div class=" col-xs-6"><div class="info-box">
-            </div></div>
+            <div class=" col-xs-6">
+                <div class="info-box">
+                    <h1>Useful Information</h1>
+                    <p>{{ profiles.user.description }}</p>
+                </div>
+            </div>
             <div class="profile-container col-xs-4">
                 <img class="profile-pic" ng-src=" {{ profiles.payload.profilePic }}"/>
                 <button ng-click="profiles.show = !profiles.show" class="btn contact">CONTACT</button>

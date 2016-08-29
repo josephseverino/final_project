@@ -191,7 +191,6 @@ nav a:visited {
     z-index: 20;
     text-align: center;
     position: relative;
-    top: 40px;
 }
 
 /*This is everything for the steps sections*/
@@ -264,7 +263,8 @@ nav a:visited {
 .video-container .filter {
     z-index: 100;
     position: absolute;
-    background: rgba(0, 0, 0, 0.4);
+    top:0px
+    background: rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 .video-container video {

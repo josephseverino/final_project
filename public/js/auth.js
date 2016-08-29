@@ -9,12 +9,7 @@
 
         var auth = this,
             alertError = ['alert','alert-danger'];
-
-        auth.payload = { // used both for registering and loggin in
-            // ng-models are point to properties on this object
-            // email (ng-model)
-            // password (ng-model)
-        };
+        auth.payload = {};
 
         auth.login = {
             // happens when the user clicks submit on the login form

@@ -189,7 +189,14 @@ body {font-family: Verdana, sans-serif;}
     height: 65vh;
     background-color: white;
     border-radius: 8px;
+    font-size: 18px;
+    line-height: 30px;
+
 }
+.info-box p {
+    margin: 0px 40px 0px 40px;
+}
+
 
 .profile-container {
     background-color: rgba(0,0,0,.9);

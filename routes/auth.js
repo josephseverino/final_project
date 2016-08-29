@@ -13,7 +13,7 @@ var User = require('../models/user'),
 
 module.exports = {
     render: (req, res) => { // render the login page
-        req.session.user = null;
+        // req.session.user = null;
         res.render('auth.html');
     },
     logout: (req, res) => {
@@ -25,6 +25,7 @@ module.exports = {
         User.findOne({
             email: req.body.email
         }, (err, user) => {
+
             if( err ) {
                 console.error('MongoDB error:'.red, err);
                 res.status(500).json(errors.general);
@@ -48,8 +49,10 @@ module.exports = {
                         res.status(403).json(errors.login);
                     } else {
                         req.session.user = user;
+                        console.log('usernew'.red,req.session.user)
                         delete user.password; // just for securty, delete the password before sending it to the front-end;
-                        res.json(user);
+                        //res.send(user);
+                        res.end();
                     }
                 });
             }
@@ -71,15 +74,92 @@ module.exports = {
             }
         });
     },
+    selectUser: (req,res) => {
+        User.find({'_id' : req.params.id}, (err, user) => {
+            if( err ) {
+                console.error('MongoDB error:'.red, err);
+                res.status(500).json(errors.general);
+            }
+            if( !user ) {
+                // forbidden
+                console.warn('No user found!'.yellow);
+                res.status(404).json(errors.login);
+            } else {
+                console.info('auth.login.user', user);
+                res.render('reserve.html')
+            }
+        });
+    },
+    createUserApi: (req, res) => {
+        User.find({}, (err, users) => {
+            if( err ) {
+                console.error('MongoDB error:'.red, err);
+                res.status(500).json(errors.general);
+            }
+            if( !users ) {
+                // forbidden
+                console.warn('No users found!'.yellow);
+                res.status(404).json(errors.login);
+            } else {
+                console.info('auth.login.user', users);
+                res.json(users);
+            }
+        });
+    },
+    updateProfile: (req, res) => {
+        User.findOne({
+            email: req.body.email
+        }, (err, user) => {
+            if( err ) {
+                console.error('MongoDB error:'.red, err);
+                res.status(500).json(errors.general);
+            }
+            if( !user ) {
+                // forbidden
+                console.warn('No user found!'.yellow);
+                res.status(403).json(errors.login);
+            } else {
+                user.email = req.body.email;
+                user.zipCode = req.body.zipCode;
+                user.city = req.body.city;
+                user.state = req.body.state;
+                user.phone = req.body.phone;
+                user.rate = req.body.rate;
+                user.typeEquipment = req.body.typeEquipment;
+                user.description = req.body.description;
+                user.profilePic = req.body.profilePic;
+                user.photo = req.body.photo;
+                user.save();
+                res.send(user)
+            }
+        });
+    },
+    grabUser: (req,res) => {
+        User.findOne({ '_id' : req.params.id }, (err, user) => {
+            if( err ) {
+                console.error('MongoDB error:'.red, err);
+                res.status(500).json(errors.general);
+            }
+            if( !user ) {
+                // forbidden
+                console.warn('No user found!'.yellow);
+                res.status(404).json(errors.login);
+            } else {
+                console.info('auth.login.user', user);
+                res.send(user)
+            }
+        });
+    },
     // Auth middleware functions, grouped
     middlewares: {
         session: (req, res, next) => {
+            console.log('sessions user'.red,req.session)
             if( req.session.user ) {
                 console.info('User is logged in, proceeding to dashboard...'.green);
                 next();
             } else {
                 console.warn('User is not logged in!'.yellow)
-                res.redirect('/login');
+                res.redirect('/');
             }
         }
     }

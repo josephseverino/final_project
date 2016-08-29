@@ -4,6 +4,15 @@ angular.module('gear')
     .controller('gearController', ['$scope','$http', function($scope, $http){
         var profiles = this;
         profiles.sortPrice = "";
+        profiles.filter = {};
+        profiles.filterByCategory = filterByCategory;
+        function filterByCategory(equipment) {
+            return profiles.filter[equipment.typeEquipment] || noFilter(profiles.filter);
+        }
+
+        function noFilter(filterObj){
+            return Object.keys(filterObj).every(function (key) { return !( filterObj[key] ); });
+        }
         $http({
             method : 'GET',
             url    : '/users',
