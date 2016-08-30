@@ -22,9 +22,7 @@ module.exports = (app) => {
     app.get('/reserve/:id', Auth.selectUser);
     app.get('/user/:id', Auth.grabUser);
 
-    app.get('/user',  (req, res) => {
-        res.json({user:req.session.user})// Send down the logged in user
-    });
+    app.get('/user',  Auth.selectUser);
 
     app.get('/users', Auth.createUserApi);
 

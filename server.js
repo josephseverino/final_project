@@ -13,10 +13,10 @@ var express = require('express'),
 
 app.use(logger('dev'));
 app.use(sessions({
-    cookieName: '_gear-share', // front-end cookie name
+    cookieName: 'gear-share', // front-end cookie name
     secret: 'a9iysc', // the encryption password : keep this safe DR@G0N$
     requestKey: 'session', // req.session,
-    duration: 86400, // 60 * 60 * 24 (number of seconds in a day), tells the middleware when the cookie/session should expire,
+    duration: 24 * 60 * 60 * 1000, // 60 * 60 * 24 (number of seconds in a day), tells the middleware when the cookie/session should expire,
     cookie: {
         ephemeral: false,   // when true, cookie expires when browser is closed
         httpOnly: true,     // when true, the cookie is not accesbile via front-end JavaScript

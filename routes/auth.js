@@ -13,11 +13,10 @@ var User = require('../models/user'),
 
 module.exports = {
     render: (req, res) => { // render the login page
-        // req.session.user = null;
         res.render('auth.html');
     },
     logout: (req, res) => {
-        req.session.user = null;
+        req.session.reset();
         res.redirect('/login');
     },
     login: (req, res) => { // form post submission
@@ -48,10 +47,8 @@ module.exports = {
                         console.warn('Password did not match!'.yellow);
                         res.status(403).json(errors.login);
                     } else {
-                        req.session.user = user;
-                        console.log('usernew'.red,req.session.user)
-                        delete user.password; // just for securty, delete the password before sending it to the front-end;
-                        //res.send(user);
+                        req.session.userId = user._id;
+                        console.log('usernew'.red,req.session.userId)                        //res.send(user);
                         res.end();
                     }
                 });
@@ -69,13 +66,15 @@ module.exports = {
                 res.status(500).send(errors.general);
             } else {
                 console.log('New user created in MongoDB:', user);
-                req.session.user = user;
-                res.send(user);
+                req.session.userId = user._id;
+                res.end();
             }
         });
     },
     selectUser: (req,res) => {
-        User.find({'_id' : req.params.id}, (err, user) => {
+        User.find({
+            '_id' : req.params.id || res.session.userId
+        }, (err, user) => {
             if( err ) {
                 console.error('MongoDB error:'.red, err);
                 res.status(500).json(errors.general);
@@ -153,8 +152,8 @@ module.exports = {
     // Auth middleware functions, grouped
     middlewares: {
         session: (req, res, next) => {
-            console.log('sessions user'.red,req.session)
-            if( req.session.user ) {
+            console.log('sessions user'.red,req.session.user)
+            if( req.session.userId ) {
                 console.info('User is logged in, proceeding to dashboard...'.green);
                 next();
             } else {

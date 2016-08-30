@@ -22,7 +22,7 @@
                     // brandon reminds you, that a wiffle bat will strike you if you forget your error callback!
             },
             success: function(res) { // server response callback
-                location.href = '/dashboard';
+                location.href = '/dashboard' ;
                 console.log('it worked')
             },
             error: function(err) {
