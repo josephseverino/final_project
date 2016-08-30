@@ -5,3 +5,11 @@
     width: 90vw;
     position:relative;
 }
+
+#positionMap {
+    position : relative;
+    bottom: 100px;
+    left: 100px;
+    height: 400px;
+    width: 400px;
+}

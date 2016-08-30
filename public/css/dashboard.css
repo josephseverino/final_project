@@ -249,20 +249,29 @@ body {font-family: Verdana, sans-serif;}
 .modal-edit {
     z-index: 10001;
     height:200%;
-    position:relative;
-    top:-600px;
+    width: 100vw;
+    position:absolute;;
+    top:0px;
     left:0px;
     background-color: rgba(0,0,0,.9);
 }
+.form-container {
+    z-index: 10002;
+    position: relative;
+    background-color: white;
+    top:500px;
+    color:black;
+    height: 1000px;
+}
 
 .text-center {
-    color:white;
+    color:  #1abc9c;
 }
 .sign-in-exit {
     position:relative;
-    top:0;
+    top:-60px;
     right:-100%;
-    color:#DDD;
+    color:#777;
     font-size:20px;
     cursor: pointer;
     padding-bottom: 40px;

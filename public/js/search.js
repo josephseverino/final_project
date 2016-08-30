@@ -33,7 +33,7 @@ angular.module('gear')
                                 var marker = new google.maps.Marker({
                                     map: profiles.map,
                                     position: results[0].geometry.location,
-                                    icon: '../img/hiking.png'
+                                    icon: '../img/pin.png'
                                 });
                                 console.log(results[0]);
                             }

@@ -48,7 +48,8 @@ module.exports = {
                         res.status(403).json(errors.login);
                     } else {
                         req.session.userId = user._id;
-                        console.log('usernew'.red,req.session.userId)                        //res.send(user);
+                        console.log('user'.red,req.session.userId)                        //res.send(user);
+                        // res.send(user);
                         res.end();
                     }
                 });
@@ -72,8 +73,9 @@ module.exports = {
         });
     },
     selectUser: (req,res) => {
+        console.log('req.body'.red,req.session)
         User.find({
-            '_id' : req.params.id || res.session.userId
+            '_id' : req.params.id || req.session.userId
         }, (err, user) => {
             if( err ) {
                 console.error('MongoDB error:'.red, err);
@@ -106,9 +108,11 @@ module.exports = {
         });
     },
     updateProfile: (req, res) => {
+        console.log('req.body is heree!!!'.cyan,req.body)
         User.findOne({
-            email: req.body.email
-        }, (err, user) => {
+            email : req.body.email
+        },
+            (err, user) => {
             if( err ) {
                 console.error('MongoDB error:'.red, err);
                 res.status(500).json(errors.general);
@@ -118,6 +122,7 @@ module.exports = {
                 console.warn('No user found!'.yellow);
                 res.status(403).json(errors.login);
             } else {
+                console.log("hello".red, user)
                 user.email = req.body.email;
                 user.zipCode = req.body.zipCode;
                 user.city = req.body.city;
@@ -133,8 +138,9 @@ module.exports = {
             }
         });
     },
-    grabUser: (req,res) => {
-        User.findOne({ '_id' : req.params.id }, (err, user) => {
+    grabLender: (req,res) => {
+        console.log("req.session".cyan,req.session.userId)
+        User.findOne({ '_id' : req.session.userId }, (err, user) => {
             if( err ) {
                 console.error('MongoDB error:'.red, err);
                 res.status(500).json(errors.general);
@@ -156,6 +162,7 @@ module.exports = {
             if( req.session.userId ) {
                 console.info('User is logged in, proceeding to dashboard...'.green);
                 next();
+
             } else {
                 console.warn('User is not logged in!'.yellow)
                 res.redirect('/');

@@ -21,14 +21,14 @@
         </nav>
         <div  class="row">
             <!-- ng-repeat="profile in profiles.user" -->
-            <h1 class="title">{{ profiles.payload.description }}</h1>
+            <h1 class="title">{{ profiles.user.titleDescription }}</h1>
             <div class="col-xs-1"></div>
             <div class="img-container col-xs-6">
-                <img class="gear-img" ng-src="{{ profiles.payload.photo }}"/>
+                <img class="gear-img" ng-src="{{ profiles.user.photo }}"/>
             </div>
             <div class="col-xs-4">
                 <div class="calender">
-                    <h1 class="title2">{{ profiles.payload.description }}</h1>
+                    <h1 class="title2">{{ profiles.user.titleDescription }}</h1>
                     <div class="month">
                       <ul>
                         <li class="prev">&#10094;</li>
@@ -82,7 +82,7 @@
                       <li>29</li>
                       <li>30</li>
                     </ul>
-                    <div class="rate1">${{ profiles.payload.rate }} <h5>PER WEEK</h5></div>
+                    <div class="rate1">${{ profiles.user.rate }} <h5>PER WEEK</h5></div>
                     <div class="btnContainer"><button class="btn book">BOOK</button></div>
                 </div>
             </div>
@@ -97,12 +97,12 @@
                 </div>
             </div>
             <div class="profile-container col-xs-4">
-                <img class="profile-pic" ng-src=" {{ profiles.payload.profilePic }}"/>
+                <img class="profile-pic" ng-src=" {{ profiles.user.profilePic }}"/>
                 <button ng-click="profiles.show = !profiles.show" class="btn contact">CONTACT</button>
                 <h3 class="profile-name"> Name </h3>
                 <div ng-show="profiles.show"class="hidden-contact">
-                    <h4> {{  profiles.payload.email }} </h4>
-                    <h4> {{  profiles.payload.phone }} </h4>
+                    <h4> {{  profiles.user.email }} </h4>
+                    <h4> {{  profiles.user.phone }} </h4>
                 </div>
 
             </div>
@@ -114,7 +114,7 @@
         </div>
         <div ng-show="profiles.showEdit" class="modal-edit row">
             <div class="col-xs-3"></div>
-            <form ng-submit="profiles.update" class="col-xs-6">
+            <form  ng-submit="profiles.update(profiles.payload)" class="form-container col-xs-6">
                 <h1 class="text-center">Edit your profile</h1>
                 <div class="sign-in-exit" ng-click="profiles.showEdit = !profiles.showEdit">X</div>
                 <fieldset class="form-group">

@@ -20,7 +20,8 @@ module.exports = (app) => {
     });
 
     app.get('/reserve/:id', Auth.selectUser);
-    app.get('/user/:id', Auth.grabUser);
+    app.get('/lender', Auth.grabLender);
+    app.post('/lender', Auth.updateProfile)
 
     app.get('/user',  Auth.selectUser);
 
