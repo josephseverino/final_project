@@ -49,7 +49,8 @@ module.exports = {
                     } else {
                         req.session.userId = user._id;
                         console.log('user'.red,req.session.userId)                        //res.send(user);
-                        // res.send(user);
+                        //res.send(user);
+                        res.status(200);
                         res.end();
                     }
                 });
@@ -158,7 +159,7 @@ module.exports = {
     // Auth middleware functions, grouped
     middlewares: {
         session: (req, res, next) => {
-            console.log('sessions user'.red,req.session.user)
+            console.log('sessions user'.red,req.session.userId)
             if( req.session.userId ) {
                 console.info('User is logged in, proceeding to dashboard...'.green);
                 next();
