@@ -42,7 +42,7 @@ angular.module('gear')
                     }
                 }
                 profiles.map = new google.maps.Map(document.getElementById("map"), {
-                    zoom:8,
+                    zoom:9,
                     center: {lat: 39.7392, lng: -104.9903},
                     mapTypeId: 'terrain',
 

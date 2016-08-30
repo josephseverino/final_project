@@ -2,7 +2,7 @@ var map;
 var markers =[];
 function initialize() {
   map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 9,
+    zoom: 11,
     styles: [
             {
               featureType: 'all',
@@ -24,7 +24,7 @@ function initialize() {
               ]
             }
         ],
-    center: new google.maps.LatLng(39.7392,-104.9903),
+    center: new google.maps.LatLng(40.0150,-105.2705),
     mapTypeId: 'terrain'
   });
 
@@ -44,6 +44,7 @@ function initialize() {
                 var lat = data.places[i].lat;
                 var lon = data.places[i].lon;
                 var title = data.places[i].name;
+                var directions =data.places[i].directions;
                 var description = data.places[i].activities[0].description;
                 var pic = data.places[i].activities[0].thumbnail;
                 var height;
@@ -60,6 +61,7 @@ function initialize() {
                   map: map,
                   title:title,
                   description: description,
+                  directions: directions,
                   height:height,
                   pic: pic,
                   animation:google.maps.Animation.Drop,
@@ -77,12 +79,16 @@ function initialize() {
                     infowindow.marker = marker;
                     var markerHtml;
                     if(marker.pic){
-                        markerHtml = '<h2>' + marker.title + '</h2>'  +
+                        markerHtml = '<h2 style="background-color: #1abc9c; padding:10px; color:white">' + marker.title + '</h2>'  +
                                      '<div>' + marker.description + '</div>'  +
-                                     '<div>' + '<img style="height: ' + marker.height + '" src="' + marker.pic + '"/></div>';
+                                     '<div>' + '<img style="height: ' + marker.height + '" src="' + marker.pic + '"/></div>' +
+                                     '<h3> Directions </h3>' +
+                                     '<p>' + marker.directions + '</p>';
                     }else{
-                        markerHtml = '<h2>' + marker.title + '</h2>'  +
-                                     '<div>' + marker.description + '</div>'
+                        markerHtml = '<h2 style="background-color: #1abc9c; padding:10px; color:white">' + marker.title + '</h2>'  +
+                                     '<div>' + marker.description + '</div>'+
+                                     '<h3 > Directions </h3>' +
+                                     '<p>' + marker.directions + '</p>';
                     }
                     infowindow.setContent( markerHtml );
                     infowindow.open(map,marker);

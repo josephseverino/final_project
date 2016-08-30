@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/dashboard.css">
         <link rel="stylesheet" type="text/css" href="../css/search.css">
+        <link rel="stylesheet" type="text/css" href="../css/reserve.css">
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
@@ -22,7 +23,7 @@
             <!-- ng-repeat="profile in profiles.user.user" -->
             <h1 class="title">{{ profiles.user.titleDescription }}</h1>
             <div class="col-xs-1"></div>
-            <div class="img-container col-xs-6">
+            <div class="img-container col-xs-5">
                 <img class="gear-img" ng-src="{{ profiles.user.photo }}"/>
             </div>
             <div class="col-xs-4">
@@ -50,36 +51,38 @@
                     </ul>
 
                     <ul class="days">
-                      <li>1</li>
-                      <li>2</li>
-                      <li>3</li>
-                      <li>4</li>
-                      <li>5</li>
-                      <li>6</li>
-                      <li>7</li>
-                      <li>8</li>
-                      <li>9</li>
-                      <li><span class="active">10</span></li>
-                      <li>11</li>
-                      <li>12</li>
-                      <li>13</li>
-                      <li>14</li>
-                      <li>15</li>
-                      <li>16</li>
-                      <li>17</li>
-                      <li>18</li>
-                      <li>19</li>
-                      <li>20</li>
-                      <li>21</li>
-                      <li>22</li>
-                      <li>23</li>
-                      <li>24</li>
-                      <li>25</li>
-                      <li>26</li>
-                      <li>27</li>
-                      <li>28</li>
-                      <li>29</li>
-                      <li>30</li>
+                        <li></li>
+                        <li></li>
+                        <li>1</li>
+                        <li><span class="active">2</span></li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li>10</li>
+                        <li>11</li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li>26</li>
+                        <li>27</li>
+                        <li>28</li>
+                        <li>29</li>
+                        <li>30</li>
                     </ul>
                     <div class="rate1">${{ profiles.user.rate }} <h5>PER WEEK</h5></div>
                     <div class="btnContainer"><button class="btn book">BOOK</button></div>
@@ -89,7 +92,7 @@
         </div>
         <div class="row">
             <div class="col-xs-1"></div>
-            <div class=" col-xs-6">
+            <div class=" col-xs-5">
                 <div class="info-box">
                     <h2>Useful Information</h2>
                     <p>{{ profiles.user.description }}</p>
