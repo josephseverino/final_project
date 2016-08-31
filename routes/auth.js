@@ -139,6 +139,25 @@ module.exports = {
             }
         });
     },
+    deleteProfile: (req, res) => {
+        console.log('req.body is heree!!!', req.params)
+        User.remove({
+            '_id' : req.params.id
+        },
+            (err, user) => {
+            if( err ) {
+                console.error('MongoDB error:'.red, err);
+                res.status(500).json(errors.general);
+            }
+            if( !user ) {
+                // forbidden
+                console.warn('No user found!'.yellow);
+                res.status(403).json(errors.login);
+            } else {
+                res.send({message: 'success'})
+            }
+        });
+    },
     grabLender: (req,res) => {
         console.log("req.session".cyan,req.session.userId)
         User.findOne({ '_id' : req.session.userId }, (err, user) => {

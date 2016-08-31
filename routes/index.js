@@ -21,7 +21,8 @@ module.exports = (app) => {
 
     app.get('/reserve/:id', Auth.selectUser);
     app.get('/lender', Auth.grabLender);
-    app.post('/lender', Auth.updateProfile)
+    app.post('/lender', Auth.updateProfile);
+    app.delete('/lender/:id', Auth.deleteProfile)
 
     app.get('/user',  Auth.selectUser);
 

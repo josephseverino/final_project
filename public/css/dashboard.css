@@ -246,6 +246,10 @@ body {font-family: Verdana, sans-serif;}
     width: 120px;
 }
 
+.delete {
+    background-color: red;
+}
+
 .modal-edit {
     z-index: 10001;
     height:200%;

@@ -16,6 +16,18 @@ angular.module('app.dashboard', [])
             });
         }
 
+        profiles.delete = function(){
+            console.log(profiles.user._id, 'profile user')
+            $http({
+                method : 'DELETE',
+                url    : '/lender/' + profiles.user._id,
+            }).then(function(responseData){
+                console.log('delete responseData', responseData);
+                profiles.user = null;
+                location.replace('/login')
+            });
+        }
+
         $http({
             method : 'GET',
             url    : '/lender/' ,

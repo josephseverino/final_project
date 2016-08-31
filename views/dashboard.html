@@ -15,6 +15,7 @@
     </head>
     <body ng-controller="DashboardController as profiles" >
         <nav class="navbar">
+            <a href="/logout" class="explore-link">Logout</a>
             <a class="explore-link"href="/">Home</a>
             <a class="background-color" href="./search">Search for gear</a>
             <a class="explore-link"href="./explore">Explore!</a>
@@ -111,8 +112,9 @@
             <div class="col-xs-1"></div>
         </div>
         <div class="position">
-            <a href="/" class="btn btn-lg btn-danger">Logout</a>
+                <!-- <a href="/" class="btn btn-lg btn-danger">Logout</a> -->
             <button ng-click="profiles.showEdit = ! profiles.showEdit" class="btn btn-lg edit">Edit</button>
+            <button ng-click="profiles.delete()" class="btn btn-lg btn-danger"  type="submit">Delete</button>
         </div>
         <div ng-show="profiles.showEdit" class="modal-edit row">
             <div class="col-xs-3"></div>
