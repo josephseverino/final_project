@@ -42,6 +42,7 @@ angular.module('app.dashboard', [])
                 profiles.payload.rate = profiles.user.rate;
                 profiles.payload.typeEquipment = profiles.user.typeEquipment;
                 profiles.payload.description = profiles.user.description;
+                profiles.payload.titleDescription = profiles.user.titleDescription;
                 profiles.payload.profilePic = profiles.user.profilePic;
                 profiles.payload.photo = profiles.user.photo;
                 var arr = ['('];
