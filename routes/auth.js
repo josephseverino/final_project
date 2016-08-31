@@ -132,6 +132,7 @@ module.exports = {
                 user.rate = req.body.rate;
                 user.typeEquipment = req.body.typeEquipment;
                 user.description = req.body.description;
+                user.titleDescription = req.body.titleDescription;
                 user.profilePic = req.body.profilePic;
                 user.photo = req.body.photo;
                 user.save();
