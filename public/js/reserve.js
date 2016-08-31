@@ -37,7 +37,7 @@ angular.module('app.reserve', [])
                 }
 
                 profiles.map = new google.maps.Map(document.getElementById("map"), {
-                    zoom:8,
+                    zoom:15,
                     center: {lat: 39.7392, lng: -104.9903},
                     mapTypeId: 'terrain',
 

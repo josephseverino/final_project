@@ -1,16 +1,124 @@
-/*#map {
-    top: 500px;
-    left:150px;
+#map {
+    top: 1300px;
+    left: 170px;
     height: 400px;
     width: 600px;
-    position:relative;
-
+    position: absolute;
 }
 
-#positionMap {
-    position : relative;
-    bottom: 100px;
-    left: 100px;
-    height: 400px;
-    width: 400px;
-}*/
+
+body {
+    font-family: 'Economica', sans-serif;
+}
+ .searchForm {
+     float:right;
+     top: 80px;
+     position:fixed;
+     width:99%;
+     height: 80px;
+     z-index: 10002;
+     background-color: #444;
+     margin-bottom: 5px;
+     font-size:20px;
+     padding-top:15px;
+ }
+ .searchForm2 {
+     float:right;
+     top: 165px;
+     position:fixed;
+     width:99%;
+     height: 80px;
+     z-index: 10002;
+     background-color: #444;
+     margin-bottom: 5px;
+     font-size:25px;
+     padding-top:15px;
+ }
+
+.rightSide {
+    position :absolute;
+    top: 0px;
+    right: 10px;
+    width:64vw
+}
+ .checkbox {
+     display:inline;
+     padding:5px 10px;
+     color:white;
+ }
+
+ .label {
+     font-size: 45px;
+     color: white;
+     padding:10px 50px 0px 20px;
+     margin-top: 20px;
+ }
+
+ .gearProfile {
+     float:right;
+     top: 220px;
+     z-index: 0;
+     position:relative;
+     width:99%;
+     height: 300px;
+     border-top: 8px solid #777;
+     padding-bottom: 15px;
+ }
+
+ .gearImg {
+     height:100%;
+     width:22vw;
+     float:left;
+     padding-right:25px;
+ }
+
+ .button {
+     height: 50px;
+     width: 150px;
+     position:absolute;
+     bottom:43%;
+     right: 5px;
+     background-color: #1abc9c;
+     font-size: 25px;
+     color:white;
+ }
+
+.title-search {
+    font-size: 55px;
+}
+
+.location {
+    color: #999
+}
+
+.rate {
+    color:#999;
+    font-size: 35px;
+    position:absolute;
+    bottom:0px;
+    right: 5px;
+}
+
+.rateNumber {
+    color:#999;
+    font-size: 55px;
+}
+
+.pagination {
+    padding:20px;
+    position: relative;
+    top: 64px;
+}
+
+.footer {
+    height: 50%;
+    width: 100%;
+    color: black;
+    font-size: 18px;
+    background-color: rgba(0,0,0,.7);
+    padding-top: 5%;
+    z-index: 20;
+    text-align: center;
+    position: relative;
+    top: 40px;
+}

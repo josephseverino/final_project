@@ -43,7 +43,7 @@
             success: function() {
                 console.log('Auth register success')
                 // when register is successful, just redirect them into the dashboard (already logged in)
-                // location.href = "/dashboard";
+                location.href = "/dashboard";
             },
             error: function(err) {
                 console.error('auth.register.error', err);

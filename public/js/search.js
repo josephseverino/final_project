@@ -7,19 +7,22 @@ angular.module('gear')
         profiles.filter = {};
         profiles.filterByCategory = filterByCategory;
         function filterByCategory(equipment) {
+            console.log(profiles);
             return profiles.filter[equipment.typeEquipment] || noFilter(profiles.filter);
         }
 
         function noFilter(filterObj){
             return Object.keys(filterObj).every(function (key) { return !( filterObj[key] ); });
+
         }
         $http({
             method : 'GET',
             url    : '/users',
         }).then(function(returnData){
-            console.log(returnData.data)
+            // console.log(returnData.data)
             if (returnData.data ){
                 profiles.users = returnData.data;
+
                 profiles.makeAddress = function(){
                     var address = [];
                     for(var i = 0; i < profiles.users.length; i++ ){
@@ -35,10 +38,10 @@ angular.module('gear')
                                     position: results[0].geometry.location,
                                     icon: '../img/pin.png'
                                 });
-                                console.log(results[0]);
+                                // console.log(results[0]);
                             }
                         });
-                        console.log(address);
+                        // console.log(address);
                     }
                 }
                 profiles.map = new google.maps.Map(document.getElementById("map"), {
