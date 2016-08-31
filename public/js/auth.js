@@ -22,7 +22,7 @@
                     // brandon reminds you, that a wiffle bat will strike you if you forget your error callback!
             },
             success: function(res) { // server response callback
-                location.href = '/dashboard' ;
+                location.replace('/dashboard');
                 console.log('it worked')
             },
             error: function(err) {
@@ -43,7 +43,8 @@
             success: function() {
                 console.log('Auth register success')
                 // when register is successful, just redirect them into the dashboard (already logged in)
-                 location.replace('/dashboard');
+                // location.href = "/dashboard";
+                location.replace('/dashboard');
             },
             error: function(err) {
                 console.error('auth.register.error', err);
