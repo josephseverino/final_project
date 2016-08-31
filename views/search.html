@@ -51,7 +51,7 @@
               <div ng-repeat="profile in profiles.users | filter:profiles.filterByCategory | orderBy: sortPrice" class="gearProfile">
                   <img  class="gearImg" ng-src="{{ profile.photo }}"/>
                   <a href="/reserve/{{profile._id}}" class="button btn">Reserve Me</a>
-                  <h1 class="title-search">{{ profile.typeEquipment }}</h1>
+                  <h1 class="title-search">{{ profile.titleDescription }}</h1>
                   <h3 class="location">@{{ profile.city }},{{ profile.state }}</h3>
                   <h3 class="rate">Starting From<span class="rateNumber">${{ profile.rate }}/</span>Day</h3>
               </div>
