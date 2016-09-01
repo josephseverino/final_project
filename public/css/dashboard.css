@@ -23,6 +23,20 @@ nav {
     padding: 20px 20px 29px 20px;
 }
 
+#siteName{
+    color:white;
+    position: fixed;
+    left: 5%;
+    top:-10px;
+
+}
+
+.spanTitle {
+    color: #1abc9c;
+    font-family: monospace;
+    font-size: 50px;
+}
+
 .navbar {
     margin-bottom: 0;
     background-color:rgba(0,0,0,.5);
@@ -208,7 +222,7 @@ body {font-family: Verdana, sans-serif;}
 }
 .profile-pic {
     height: 200px;
-    width: 50%;
+    width: 38%;
     float:left;
 }
 

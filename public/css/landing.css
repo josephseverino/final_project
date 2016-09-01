@@ -21,6 +21,19 @@ nav {
     z-index:99;
     text-align: right;
 }
+#siteName{
+    color:white;
+    position: fixed;
+    left: 5%;
+    top:-10px;
+
+}
+
+.spanTitle {
+    color: #1abc9c;
+    font-family: monospace;
+    font-size: 50px;
+}
 .background-color{
     background-color: #1abc9c;
     padding: 20px 20px 29px 20px;

@@ -10,6 +10,20 @@
 body {
     font-family: 'Economica', sans-serif;
 }
+
+#siteName{
+    color:white;
+    position: fixed;
+    left: 5%;
+    top:-10px;
+
+}
+
+.spanTitle {
+    color: #1abc9c;
+    font-family: monospace;
+    font-size: 50px;
+}
  .searchForm {
      float:right;
      top: 80px;
@@ -67,7 +81,7 @@ body {
 
  .gearImg {
      height:100%;
-     width:22vw;
+     /*width:50px;*/
      float:left;
      padding-right:25px;
  }
@@ -102,6 +116,10 @@ body {
 .rateNumber {
     color:#999;
     font-size: 55px;
+}
+
+.profile-pic {
+    width: 38%;
 }
 
 .pagination {

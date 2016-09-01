@@ -19,6 +19,19 @@ img {
        height: 150px;
        width: 209px;
  }
+ #siteName{
+     color:white;
+     position: fixed;
+     left: 5%;
+     top:-10px;
+
+ }
+
+ .spanTitle {
+     color: #1abc9c;
+     font-family: monospace;
+     font-size: 50px;
+ }
  .footer {
      height: 50%;
      width: 100%;
